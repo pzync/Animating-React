@@ -4,16 +4,24 @@ import { useSpring, animated } from "react-spring";
 const Toggle = () => {
   const [toggleState, setToggleState] = useState(false);
 
-  const fade = useSpring({
+  const { color, y } = useSpring({
     // opacity: toggleState ? 1 : 0,
     color: toggleState ? `magenta` : `yellow`,
     // fontSize: toggleState ? `2em` : `10rem`
-    transform: toggleState ? `translate3d(0,0,0)` : `translate3d(0, -40px, 0)`
+    // transform: toggleState ? `translate3d(0,0,0)` : `translate3d(0, -40px, 0)`
+    y: toggleState ? 0 : -80
   });
 
   return (
     <div>
-      <animated.h1 style={fade}>Hello</animated.h1>
+      <animated.h1
+        style={{
+          color,
+          transform: y.interpolate(y => `translate3d(0,${y}px,0)`)
+        }}
+      >
+        Hello
+      </animated.h1>
       <button onClick={() => setToggleState(!toggleState)}>Toggle</button>
     </div>
   );
