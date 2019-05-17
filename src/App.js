@@ -2,6 +2,7 @@ import React from "react";
 import { useSpring, animated } from "react-spring";
 import logo from "./logo.svg";
 import "./App.css";
+import Toggle from "./toggle";
 
 function App() {
   const fade = useSpring({ from: { opacity: 0 }, opacity: 1 });
@@ -12,6 +13,9 @@ function App() {
         <img src={logo} className="logo" alt="logo" />
         <button className="menu-button">Menu</button>
       </header>
+      <main>
+        <Toggle />
+      </main>
     </animated.div>
   );
 }
