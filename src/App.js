@@ -9,9 +9,6 @@ function App() {
   const fade = useSpring({ from: { opacity: 0 }, opacity: 1 });
 
   const [navOpen, setNavOpen] = useState(false);
-  const navAnimation = useSpring({
-    transform: navOpen ? `translate3d(0,0,0)` : `translate3d(100%,0,0)`
-  });
 
   return (
     <animated.div className="App" style={fade}>
@@ -21,7 +18,7 @@ function App() {
           Menu
         </button>
       </header>
-      <Nav style={navAnimation} />
+      <Nav status={navOpen} />
       <main>
         <Toggle />
       </main>
