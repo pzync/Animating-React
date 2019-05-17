@@ -5,7 +5,10 @@ const Toggle = () => {
   const [toggleState, setToggleState] = useState(false);
 
   const fade = useSpring({
-    opacity: toggleState ? 1 : 0
+    // opacity: toggleState ? 1 : 0,
+    color: toggleState ? `magenta` : `yellow`,
+    // fontSize: toggleState ? `2em` : `10rem`
+    transform: toggleState ? `translate3d(0,0,0)` : `translate3d(0, -40px, 0)`
   });
 
   return (
