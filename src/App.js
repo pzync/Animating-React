@@ -4,23 +4,28 @@ import logo from "./logo.svg";
 import "./App.css";
 import Toggle from "./Toggle";
 import Nav from "./Nav";
+import Checkout from "./Checkout";
 
 function App() {
   const fade = useSpring({ from: { opacity: 0 }, opacity: 1 });
 
-  const [navOpen, setNavOpen] = useState(false);
+  const [modalOpen, setModalOpen] = useState(false);
 
   return (
     <animated.div className="App" style={fade}>
       <header className="App-header">
         <img src={logo} className="logo" alt="logo" />
-        <button className="menu-button" onClick={() => setNavOpen(!navOpen)}>
+        <button
+          className="menu-button"
+          onClick={() => setModalOpen(!modalOpen)}
+        >
           Menu
         </button>
+        {/* <Nav status={navOpen} /> */}
       </header>
-      <Nav status={navOpen} />
       <main>
         <Toggle />
+        <Checkout isOpen={modalOpen} />
       </main>
     </animated.div>
   );
