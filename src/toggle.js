@@ -1,27 +1,26 @@
 import React, { useState } from "react";
-import { useSpring, animated } from "react-spring";
+import { useTransition, animated } from "react-spring";
 
 const Toggle = () => {
   const [toggleState, setToggleState] = useState(false);
 
-  const { color, y } = useSpring({
-    // opacity: toggleState ? 1 : 0,
-    color: toggleState ? `magenta` : `yellow`,
-    // fontSize: toggleState ? `2em` : `10rem`
-    // transform: toggleState ? `translate3d(0,0,0)` : `translate3d(0, -40px, 0)`
-    y: toggleState ? 0 : -80
+  const transitions = useTransition(toggleState, null, {
+    from: { opacity: 0 },
+    enter: { opacity: 1 },
+    leave: { opacity: 0 }
   });
 
   return (
     <div>
-      <animated.h1
-        style={{
-          color,
-          transform: y.interpolate(y => `translate3d(0,${y}px,0)`)
-        }}
-      >
-        Hello
-      </animated.h1>
+      {transitions.map(
+        ({ item, key, props }) =>
+          item && (
+            <animated.h1 key={key} style={props}>
+              Hello
+            </animated.h1>
+          )
+      )}
+
       <button onClick={() => setToggleState(!toggleState)}>Toggle</button>
     </div>
   );
