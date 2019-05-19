@@ -33,9 +33,10 @@ const Toggle = () => {
   ]);
 
   const transitions = useTransition(items, item => item.id, {
-    from: { transform: `translateX(-20px)` },
-    enter: { transform: `translateX(0px)` },
-    leave: { transform: `translateX(20px)` }
+    from: { transform: `translateX(-40px)`, opacity: 0 },
+    enter: { transform: `translateX(0px)`, opacity: 1 },
+    leave: { transform: `translateX(40px)`, opacity: 0 },
+    trail: 100 // this trail property adds acumulative delays
   });
 
   return (
