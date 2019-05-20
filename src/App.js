@@ -5,6 +5,7 @@ import "./App.css";
 import Toggle from "./Toggle";
 import Nav from "./Nav";
 import Checkout from "./Checkout";
+import Routes from "./Routes";
 
 function App() {
   const fade = useSpring({ from: { opacity: 0 }, opacity: 1 });
@@ -24,7 +25,8 @@ function App() {
         {/* <Nav status={navOpen} /> */}
       </header>
       <main>
-        <Toggle />
+        <Routes />
+        {/* <Toggle /> */}
         <Checkout isOpen={modalOpen} />
       </main>
     </animated.div>
