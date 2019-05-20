@@ -6,6 +6,7 @@ import Toggle from "./Toggle";
 import Nav from "./Nav";
 import Checkout from "./Checkout";
 import Routes from "./Routes";
+import ModalWrapper from "./Modal";
 
 function App() {
   const fade = useSpring({ from: { opacity: 0 }, opacity: 1 });
@@ -25,7 +26,8 @@ function App() {
         {/* <Nav status={navOpen} /> */}
       </header>
       <main>
-        <Routes />
+        <ModalWrapper />
+        {/* <Routes /> */}
         {/* <Toggle /> */}
         <Checkout isOpen={modalOpen} />
       </main>
