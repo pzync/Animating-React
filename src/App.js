@@ -8,6 +8,7 @@ import Checkout from "./Checkout";
 import Routes from "./Routes";
 import ModalWrapper from "./Modal";
 import Waypoints from "./Waypoint";
+import Gestures from "./Gestures";
 
 function App() {
   const fade = useSpring({ from: { opacity: 0 }, opacity: 1 });
@@ -27,11 +28,12 @@ function App() {
         {/* <Nav status={navOpen} /> */}
       </header>
       <main>
-        <ModalWrapper />
+        {/* <ModalWrapper /> */}
+        <Gestures />
         {/* <Routes /> */}
         {/* <Toggle /> */}
         <Checkout isOpen={modalOpen} />
-        <Waypoints />
+        {/* <Waypoints /> */}
       </main>
     </animated.div>
   );
