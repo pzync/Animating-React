@@ -7,6 +7,7 @@ import Nav from "./Nav";
 import Checkout from "./Checkout";
 import Routes from "./Routes";
 import ModalWrapper from "./Modal";
+import Waypoints from "./Waypoint";
 
 function App() {
   const fade = useSpring({ from: { opacity: 0 }, opacity: 1 });
@@ -30,6 +31,7 @@ function App() {
         {/* <Routes /> */}
         {/* <Toggle /> */}
         <Checkout isOpen={modalOpen} />
+        <Waypoints />
       </main>
     </animated.div>
   );
