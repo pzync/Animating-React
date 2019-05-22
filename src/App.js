@@ -9,6 +9,7 @@ import Routes from "./Routes";
 import ModalWrapper from "./Modal";
 import Waypoints from "./Waypoint";
 import Gestures from "./Gestures";
+import Boxes from "./Boxes";
 
 function App() {
   const fade = useSpring({ from: { opacity: 0 }, opacity: 1 });
@@ -29,7 +30,7 @@ function App() {
       </header>
       <main>
         {/* <ModalWrapper /> */}
-        <Gestures />
+        <Boxes />
         {/* <Routes /> */}
         {/* <Toggle /> */}
         <Checkout isOpen={modalOpen} />
